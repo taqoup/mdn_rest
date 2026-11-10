@@ -1,0 +1,137 @@
+:root {
+  color-scheme: light;
+  --ink: #192129;
+  --paper: #f2d19b;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background: #30271e;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+.svg-library { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+.page {
+  width: min(100%, 863px);
+  margin-inline: auto;
+  background: var(--paper);
+  container-type: inline-size;
+  box-shadow: 0 0 100px #0005;
+}
+
+.chart {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 863 / 1822;
+  background: url("assets/nautical-background.png") center top / 100% 100% no-repeat;
+  text-align: center;
+}
+
+p, h1 { margin: 0; }
+.restaurant { position: absolute; top: 8%; inset-inline: 7%; }
+.restaurant-name {
+  font-size: 11.7cqw;
+  font-weight: 400;
+  font-style: italic;
+  line-height: .86;
+  letter-spacing: -.03em;
+}
+.restaurant-name span, h1 span { display: block; white-space: nowrap; }
+.restaurant-location {
+  margin-top: 1.8cqw;
+  font-size: 4.45cqw;
+  font-style: italic;
+  line-height: 1.1;
+  letter-spacing: .14em;
+  white-space: nowrap;
+}
+.restaurant-location span { margin-inline: .22em; font-style: normal; }
+
+.nautical-divider {
+  position: absolute;
+  top: 20.3%;
+  inset-inline: 18%;
+  display: flex;
+  align-items: center;
+  gap: 2.1cqw;
+}
+.nautical-divider span {
+  height: 2px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, #4c3a23 20%, #4c3a23);
+}
+.nautical-divider span:last-child { transform: scaleX(-1); }
+.nautical-divider svg { width: 7cqw; height: 7cqw; }
+
+.invitation { position: absolute; top: 24.1%; inset-inline: 5%; }
+h1 {
+  font-size: 12.15cqw;
+  font-weight: 400;
+  font-style: italic;
+  line-height: .87;
+  letter-spacing: -.045em;
+}
+.wave { display: block; width: 18.5cqw; height: 4cqw; margin: 2.8cqw auto 1.4cqw; }
+#review-description { font-size: 5.15cqw; line-height: 1.05; font-style: italic; }
+
+.review-services {
+  position: absolute;
+  top: 70.5%;
+  inset-inline: 10.4%;
+  display: grid;
+  gap: 2.6cqw;
+}
+.service-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2cqw;
+  margin-bottom: 1cqw;
+  font-size: 3.7cqw;
+  font-style: italic;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+.service-heading::before, .service-heading::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #685136;
+}
+.service-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 680 / 128;
+  min-height: 44px;
+  color: var(--ink);
+  text-decoration: none;
+  -webkit-tap-highlight-color: #9b67182b;
+  transition: transform .18s ease, filter .18s ease;
+}
+.button-frame { position: absolute; inset: 0; width: 100%; height: 100%; filter: drop-shadow(0 .7cqw .5cqw #4d301e55); }
+.service-content { position: relative; display: flex; align-items: center; justify-content: center; gap: 2.5cqw; }
+.service-content > span { font-size: 6.3cqw; font-weight: 400; line-height: 1; letter-spacing: -.04em; white-space: nowrap; }
+.service-icon { width: 7.8cqw; height: 7.8cqw; flex-shrink: 0; }
+.yandex-icon { width: 6.4cqw; }
+.button-star { position: absolute; top: 50%; width: 5.9cqw; height: 5.9cqw; transform: translateY(-50%); }
+.star-left { left: 5.4%; }
+.star-right { right: 5.4%; }
+.service-link:focus-visible { outline: 3px solid #192129; outline-offset: 5px; border-radius: 22px; }
+.service-link:active { transform: translateY(2px) scale(.99); }
+@media (hover: hover) {
+  .service-link:hover { transform: translateY(-2px); filter: brightness(1.06); }
+}
+
+.footer {
+  padding: 1.8cqw 4cqw 3.2cqw;
+  background: linear-gradient(#edc68a, #f5d9a9 55%, #edc78f);
+  text-align: center;
+}
+.footer > p:first-child { font-size: max(13px, 3.25cqw); font-style: italic; line-height: 1.4; }
+.taqo { margin-top: 1.7cqw; padding-left: .3em; font: 600 max(15px, 2.8cqw)/1.2 Arial, sans-serif; letter-spacing: .3em; }
+@media (prefers-reduced-motion: reduce) {
+  .service-link { transition: none; }
+}
